@@ -6,7 +6,7 @@ interface MainLayoutProps {
 
 const MainLayout = ({children}: MainLayoutProps) => {
   return (
-    <div className="w-full min-w-screen h-full min-h-screen bg-background">
+    <div className="w-full min-w-screen h-full min-h-screen bg-[#003049] flex">
         {children}
     </div>
   )

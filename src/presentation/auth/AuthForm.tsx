@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label";
 
 const AuthForm = () => {
   return (
-    <Card className="w-[350px]">
+    <Card className="w-[350px] bg-background-900 border-none">
       <CardHeader>
         <CardTitle>Create project</CardTitle>
         <CardDescription>Deploy your new project in one-click.</CardDescription>
