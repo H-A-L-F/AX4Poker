@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 
 interface MainLayoutProps {
-    children: ReactNode,
+    children: ReactNode
 }
 
 const MainLayout = ({children}: MainLayoutProps) => {
