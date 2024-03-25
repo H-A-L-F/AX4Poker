@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -18,12 +18,15 @@ module.exports = {
     },
     extend: {
       colors: {
-        'text': '#FDF0D5',
-        'background': '#003049',
-        'primary': '#C1121F',
-        'secondary': '#780000',
-        'accent': '#669BBC',
-       },       
+        text: "#FDF0D5",
+        background: "#003049",
+        primary: "#C1121F",
+        secondary: "#780000",
+        accent: "#669BBC",
+      },
+      textColor: {
+        'default': '#FDF0D5' // default text colornya copas dr color diatas
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -46,4 +49,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

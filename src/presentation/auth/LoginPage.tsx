@@ -2,7 +2,7 @@ import AuthForm from "./AuthForm"
 
 const LoginPage = () => {
     return (
-        <div>
+        <div className="min-w-full min-h-full flex justify-center items-center">
             <AuthForm />
         </div>
     )

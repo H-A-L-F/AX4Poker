@@ -66,6 +66,10 @@
   }
 }
 
+body {
+  @apply text-default;
+}
+
 /* @layer base {
   * {
     @apply border-border;
