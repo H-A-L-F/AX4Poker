@@ -22,7 +22,6 @@ const LoginPage = () => {
                     <p>Card Footer</p>
                 </CardFooter>
             </Card>
-
         </div>
     )
 }
