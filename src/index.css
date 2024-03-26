@@ -75,6 +75,10 @@ input {
   border: none;
 }
 
+button {
+  background-color: theme('colors.primary.500');
+}
+
 /* @layer base {
   * {
     @apply border-border;
