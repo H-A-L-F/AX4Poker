@@ -14,10 +14,11 @@ import { Link } from "react-router-dom";
 interface AuthFormProps {
   title: string,
   link: string,
+  linkTextPrefix?: string,
   linkText: string,
 }
 
-const AuthForm = ({ title, link, linkText }: AuthFormProps) => {
+const AuthForm = ({ title, link, linkTextPrefix, linkText }: AuthFormProps) => {
   return (
     <Card className="w-[350px] bg-background-900 border-none">
       <CardHeader>
@@ -38,7 +39,7 @@ const AuthForm = ({ title, link, linkText }: AuthFormProps) => {
           </div>
         </form>
         <div className="mt-2 text-sm">
-          Don't have an account yet? <Link to={"/"+link} className="font-bold">{linkText}</Link>
+          {linkTextPrefix} <Link to={"/"+link} className="font-bold">{linkText}</Link>
         </div>
       </CardContent>
       <CardFooter className="flex justify-end">
