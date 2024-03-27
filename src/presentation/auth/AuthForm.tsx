@@ -21,25 +21,28 @@ interface AuthFormProps {
 
 const AuthForm = ({ title, link, linkTextPrefix, linkText }: AuthFormProps) => {
   const {
-
+    unameRef,
+    passwordRef,
+    handleSubmit,
+    errorMsg
   } = useViewModel(title)
 
   return (
     <Card className="w-[350px] bg-background-900 border-none">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
-        {/* <CardDescription>Deploy your new project in one-click.</CardDescription> */}
+        <CardDescription className="text-red-500">{errorMsg}</CardDescription>
       </CardHeader>
       <CardContent>
         <form>
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name">Username</Label>
-              <Input id="name" placeholder="username" />
+              <Input id="name" placeholder="username" ref={unameRef}/>
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="framework">Password</Label>
-              <Input id="name" placeholder="password" />
+              <Input id="name" placeholder="password" type="password" ref={passwordRef}/>
             </div>
           </div>
         </form>
@@ -48,7 +51,7 @@ const AuthForm = ({ title, link, linkTextPrefix, linkText }: AuthFormProps) => {
         </div>
       </CardContent>
       <CardFooter className="flex justify-end">
-        <Button>Submit</Button>
+        <Button onClick={handleSubmit}>Submit</Button>
       </CardFooter>
     </Card>
   );
