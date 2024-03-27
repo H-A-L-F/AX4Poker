@@ -8,6 +8,7 @@ import ProtectedRoute from "./ProtectedRoute.js";
 const router = createBrowserRouter([
   {
     path: "/",
+    
     children: [
       {
         path: "/",

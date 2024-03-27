@@ -1,3 +1,5 @@
+import db from "@/data/firebase"
+import { ref } from "firebase/database"
 import { useRef } from "react"
 
 export default function AuthFormViewModel(mode: string) {
@@ -6,13 +8,14 @@ export default function AuthFormViewModel(mode: string) {
 
     const handleSubmit = () => {
         if(mode == "Login") {
-
+            const usersRef = ref(db, "users ")
         } else if(mode == "Register") {
 
         }
     }
 
     return {
-
+        unameRef,
+        passwordRef,
     }
 }
