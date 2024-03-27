@@ -10,6 +10,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link } from "react-router-dom";
+import useViewModel from "./AuthFormViewModel";
 
 interface AuthFormProps {
   title: string,
@@ -19,6 +20,10 @@ interface AuthFormProps {
 }
 
 const AuthForm = ({ title, link, linkTextPrefix, linkText }: AuthFormProps) => {
+  const {
+
+  } = useViewModel(title)
+
   return (
     <Card className="w-[350px] bg-background-900 border-none">
       <CardHeader>
