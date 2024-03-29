@@ -9,12 +9,16 @@ import SessionPage from "@/presentation/session/SessionPage.js";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ProtectedRoute children={<HomePage />} />,
+    element: <ProtectedRoute />,
     children: [
+      {
+        path: "/",
+        element: <HomePage />
+      },
       {
         path: "/session",
         element: <SessionPage />
-      }
+      },
     ]
   },
   {
