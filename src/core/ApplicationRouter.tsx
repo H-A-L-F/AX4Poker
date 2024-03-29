@@ -5,6 +5,7 @@ import MainLayout from "@/presentation/layout/MainLayout.js";
 import RegisterPage from "@/presentation/auth/RegisterPage.js";
 import ProtectedRoute from "./ProtectedRoute.js";
 import SessionPage from "@/presentation/session/SessionPage.js";
+import CurrSessionPage from "@/presentation/session/CurrSessionPage.js";
 
 const router = createBrowserRouter([
   {
@@ -16,17 +17,23 @@ const router = createBrowserRouter([
         element: <HomePage />
       },
       {
-        path: "/session",
-        element: <SessionPage />
+        path: "session",
+        element: <SessionPage />,
+        children: [
+          {
+            path: "/:id",
+            element: <CurrSessionPage />
+          }
+        ]
       },
     ]
   },
   {
-    path: "/login",
+    path: "login",
     element: <LoginPage />,
   },
   {
-    path: "/register",
+    path: "register",
     element: <RegisterPage />,
   },
 ]);
