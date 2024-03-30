@@ -37,12 +37,12 @@ const AuthForm = ({ title, link, linkTextPrefix, linkText }: AuthFormProps) => {
         <form>
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Username</Label>
-              <Input id="name" placeholder="username" ref={unameRef}/>
+              <Label htmlFor="username">Username</Label>
+              <Input id="username" placeholder="username" ref={unameRef}/>
             </div>
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="framework">Password</Label>
-              <Input id="name" placeholder="password" type="password" ref={passwordRef}/>
+              <Label htmlFor="password">Password</Label>
+              <Input id="password" placeholder="password" type="password" ref={passwordRef}/>
             </div>
           </div>
         </form>
