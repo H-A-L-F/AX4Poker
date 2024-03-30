@@ -1,11 +1,19 @@
 import { Button } from "@/components/ui/button"
+import { Link } from "react-router-dom"
+import useViewModel from "./HomeViewModel"
 
 const HomePage = () => {
+  const {
+    createSession,
+  } = useViewModel()
+
   return (
     <div className="min-w-full min-h-full flex flex-col items-center justify-center">
-      <Button>Create Session</Button>
+      <Button onClick={createSession}>Create Session</Button>
       <div className="h-4"></div>
-      <Button>Join Session</Button>
+      <Link to={"/session"}>
+        <Button>Join Session</Button>
+      </Link>
     </div>
   )
 }

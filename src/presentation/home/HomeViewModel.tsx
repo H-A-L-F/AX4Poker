@@ -1,7 +1,9 @@
+import { AuthContextType, useAuthContext } from "@/core/AuthContext";
 import db from "@/data/firebase";
 import { addDoc, collection } from "firebase/firestore";
 
 export default function HomeViewModel() {
+    const { user } = useAuthContext() as AuthContextType
 
     function genRandString() {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -15,11 +17,14 @@ export default function HomeViewModel() {
 
     function createSession() {
         const sessRef = collection(db, "sessions")
-        // addDoc(sessRef, {
-        //     name: genRandString(),
-        //     host: 
-        // })
-        return {
-        }
+        addDoc(sessRef, {
+            name: genRandString(),
+            host: user?.id,
+            players: []
+        })
+    }
+
+    return {
+        createSession,
     }
 }
