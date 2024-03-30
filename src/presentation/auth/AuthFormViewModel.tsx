@@ -1,6 +1,6 @@
 import { AuthContextType, useAuthContext } from "@/core/AuthContext"
 import db from "@/data/firebase"
-import { addDoc, collection, doc, getDocs, query, setDoc, where } from "firebase/firestore"
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore"
 import { useRef, useState } from "react"
 import { useLocation, useNavigate } from "react-router"
 
