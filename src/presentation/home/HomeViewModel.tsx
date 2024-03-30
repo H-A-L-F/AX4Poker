@@ -1,9 +1,11 @@
 import { AuthContextType, useAuthContext } from "@/core/AuthContext";
 import db from "@/data/firebase";
 import { addDoc, collection } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 export default function HomeViewModel() {
     const { user } = useAuthContext() as AuthContextType
+    const navigate = useNavigate()
 
     function genRandString() {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -14,13 +16,14 @@ export default function HomeViewModel() {
         return result;
     }
 
-
     function createSession() {
         const sessRef = collection(db, "sessions")
         addDoc(sessRef, {
             name: genRandString(),
             host: user?.id,
             players: []
+        }).then((docRef) => {
+            navigate(`/session/${docRef.id}`)
         })
     }
 
