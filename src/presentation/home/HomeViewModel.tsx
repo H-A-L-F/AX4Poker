@@ -21,7 +21,7 @@ export default function HomeViewModel() {
         addDoc(sessRef, {
             name: genRandString(),
             host: user?.id,
-            players: []
+            players: [user?.id]
         }).then((docRef) => {
             navigate(`/session/${docRef.id}`)
         })
