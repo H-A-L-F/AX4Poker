@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         element: <SessionPage />,
         children: [
           {
-            path: ":id",
+            path: ":sessionId",
             element: <CurrSessionPage />
           }
         ]

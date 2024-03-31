@@ -1,5 +1,4 @@
-interface User {
-  id: string,
+interface User extends Item {
   username: string;
   password: string;
 }
